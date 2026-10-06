@@ -16,18 +16,18 @@
 - 5 个页面，只有 `home` 用了装饰器 `@mixin`；`record`、`production` 是 class + `shouldComponentUpdate`
 - 6 个 less 文件，共约 250 行，都依赖 `mixin.less` 变量
 
-## 阶段 0：地基（TS + React 18）
+## 阶段 0：地基（TS + React 18）✅
 
-- [ ] 安装 `typescript`、`@types/react`、`@types/react-dom`，新增 `tsconfig.json`（`strict` + `allowJs`，允许 `.jsx`/`.tsx` 混用）
-- [ ] 新增 `npm run typecheck`
-- [ ] React 16 升到 18，入口改 `createRoot`
-- [ ] 处理升级带来的 peer 依赖问题（`react-addons-css-transition-group` 等，阶段 4 彻底替换）
+- [x] 安装 `typescript`、`@types/react`、`@types/react-dom`，新增 `tsconfig.json`（`strict` + `allowJs`，允许 `.jsx`/`.tsx` 混用）
+- [x] 新增 `npm run typecheck`
+- [x] React 16 升到 18，入口改 `createRoot`
+- [x] 处理升级带来的 peer 依赖问题（`react-addons-css-transition-group` 等，阶段 4 彻底替换）
 
-## 阶段 1：Less 改 SCSS
+## 阶段 1：Less 改 SCSS ✅
 
-- [ ] `mixin.less` 改 `_variables.scss`，`@import (reference)` 改 `@use`
-- [ ] 6 个 `.less` 改 `.scss`（变量 `@x` → `$x`）
-- [ ] 安装 `sass`，卸载 `less`；px→rem 的 PostCSS 插件保持不变
+- [x] `mixin.less` 改 `_variables.scss`，`@import (reference)` 改 `@use`
+- [x] 6 个 `.less` 改 `.scss`（变量 `@x` → `$x`）
+- [x] 安装 `sass`，卸载 `less`；px→rem 的 PostCSS 插件保持不变
 
 ## 阶段 2：工具层改 TS + 接口 mock
 

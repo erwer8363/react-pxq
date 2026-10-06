@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PublicHeader from '@/components/header/header'; 
 import { is, fromJS } from 'immutable';
-import './helpcenter.less';
+import './helpcenter.scss';
 
 export default class HelpCenter extends Component {
 
