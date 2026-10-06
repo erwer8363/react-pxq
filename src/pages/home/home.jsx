@@ -10,10 +10,9 @@ import { clearSelected } from '@/store/production/action';
 import PublicHeader from '@/components/header/header';
 import PublicAlert from '@/components/alert/alert';
 import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
-import mixin, { padStr } from '@/utils/mixin';
+import { padStr } from '@/utils/format';
 import './home.scss';
 
-@mixin({padStr})
 class Home extends Component {
   static propTypes = {
     formData: PropTypes.object.isRequired,
@@ -47,7 +46,7 @@ class Home extends Component {
       case 'name':
       break;
       case 'phoneNo':
-        value = this.padStr(value.replace(/\D/g, ''), [3, 7], ' ', event.target);
+        value = padStr(value.replace(/\D/g, ''), [3, 7], ' ', event.target);
       break;
       default:;
     }

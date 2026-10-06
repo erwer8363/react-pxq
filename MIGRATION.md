@@ -6,7 +6,7 @@
 
 ## 已确认的决定
 
-1. 接口（`api.cangdu.org`）大概率已不可用，阶段 2 加本地 mock。
+1. 接口（`api.cangdu.org`）原以为已不可用，实测仍可访问，mock 暂缓（见阶段 2）。
 2. 升级到 React 18（jotai v2、react-router 6 都更适合）。
 3. 节奏：阶段 0、1、2 由 Claude 完成；从 阶段 3b 开始，atom 由 Ever 手写，Claude 负责讲解和 review。
 
@@ -29,11 +29,11 @@
 - [x] 6 个 `.less` 改 `.scss`（变量 `@x` → `$x`）
 - [x] 安装 `sass`，卸载 `less`；px→rem 的 PostCSS 插件保持不变
 
-## 阶段 2：工具层改 TS + 接口 mock
+## 阶段 2：工具层改 TS + 接口 mock ✅
 
-- [ ] `envconfig`、`api/server`、`api/api`、`utils/mixin` 改 `.ts`，定义 `Product`、`FormData` 等类型
-- [ ] 去掉 `@mixin` 装饰器和 babel decorators 插件，`padStr` 改普通函数
-- [ ] 加本地 mock（Vite proxy 或 msw），保证 production 页面有数据
+- [x] `envconfig`、`api/server`、`api/api`、`utils/mixin` 改 `.ts`，定义 `Product`、`FormData` 等类型
+- [x] 去掉 `@mixin` 装饰器和 babel decorators 插件，`padStr` 改普通函数
+- [ ] ~~加本地 mock~~ 暂缓：2026-10 实测 `api.cangdu.org` 的 products / balance / record 接口仍可访问，暂不需要；接口失效时再用 msw 补上
 
 ## 阶段 3：按页面纵切，hooks + Jotai
 

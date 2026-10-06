@@ -16,10 +16,6 @@ px2rem.postcss = true;
 export default defineConfig({
   plugins: [
     react({
-      babel: {
-        // home.jsx 使用了 @mixin 装饰器 + class 属性
-        plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
-      },
     }),
   ],
   resolve: {
