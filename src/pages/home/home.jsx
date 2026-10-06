@@ -11,7 +11,7 @@ import PublicHeader from '@/components/header/header';
 import PublicAlert from '@/components/alert/alert';
 import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
 import mixin, { padStr } from '@/utils/mixin';
-import './home.less';
+import './home.scss';
 
 @mixin({padStr})
 class Home extends Component {

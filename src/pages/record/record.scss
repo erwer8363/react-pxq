@@ -1,14 +1,14 @@
-@import (reference) "../../style/mixin.less";
+@use "../../style/mixin" as *;
 
 .record-nav-con{
   height: 110px;
   position: relative;
   .record-nav{
     height: 100%;
-    .flex;
+    @include flex;
     background-color: #fff;
     .nav-link{
-      .font(@font-size:36px,  @text-align:center);
+      @include font($font-size:36px,  $text-align:center);
       flex: 1;
       height: 60px;
       line-height: 60px;
@@ -18,14 +18,14 @@
       border-right: 1Px solid #ddd;
     }
     .active{
-      color: @base-color;
+      color: $base-color;
     }
   }
 
   .nav-flag-bar{
-    .wh(130px, 2PX);
+    @include wh(130px, 2PX);
     border-radius: 1px;
-    background-color: @base-color;
+    background-color: $base-color;
     position: absolute;
     bottom: 0;
     left: 17%;

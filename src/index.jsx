@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Route from './router/';
 import FastClick from 'fastclick';
 import {Provider} from 'react-redux';
@@ -16,14 +16,9 @@ FastClick(document.body);
 //   console.log('store发生了变化');
 // });
 
-const render = Component => {
-  ReactDOM.render(
-    //绑定redux、热加载
-    <Provider store={store}>
-      <Component />
-    </Provider>,
-    document.getElementById('root'),
-  )
-}
-
-render(Route);
+createRoot(document.getElementById('root')).render(
+  // 绑定 redux
+  <Provider store={store}>
+    <Route />
+  </Provider>,
+);

@@ -1,26 +1,26 @@
-@import (reference) "../../style/mixin.less";
+@use "../../style/mixin" as *;
 
 .alert-con{
-  .coverScreen(fixed, rgba(0, 0, 0, 0.3));
+  @include coverScreen(fixed, rgba(0, 0, 0, 0.3));
   z-index: 11;
 }
 .alert-context{
-  .positionCenter;
+  @include positionCenter;
   z-index: 12;
-  .wh(600px, 360px);
+  @include wh(600px, 360px);
   background-color: #fff;
   border-radius: 16px;
-  .flex(@align-items: stretch);
+  @include flex($align-items: stretch);
   flex-direction: column;
   .alert-content-detail{
     flex: 5;
-    .flex;
-    .font(40px);
+    @include flex;
+    @include font(40px);
   }
   .confirm-btn{
     flex: 2;
-    .flex;
-    .font(40px);
+    @include flex;
+    @include font(40px);
     border-top: 1PX solid #eee;
   }
 }

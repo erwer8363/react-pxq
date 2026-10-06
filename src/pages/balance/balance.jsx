@@ -4,7 +4,7 @@ import PublicHeader from '@/components/header/header';
 import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
 import PublicAlert from '@/components/alert/alert';
 import API from '@/api/api';
-import './balance.less';
+import './balance.scss';
 
 class BrokeRage extends Component{
   state = {

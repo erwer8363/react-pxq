@@ -1,9 +1,9 @@
-@import (reference) "../../style/mixin.less";
+@use "../../style/mixin" as *;
 
 .home-container{
   padding-top: 88px;
   .common-title{
-    .font(36px, @base-color);
+    @include font(36px, $base-color);
     padding: 30px;
   }
   .home-form{
@@ -12,7 +12,7 @@
       height: 120px;
       border-bottom: 1PX solid #eee;
       span{
-        .font(32px, #555);
+        @include font(32px, #555);
         margin-left: 30px;
         margin-right: 20px;
       }
@@ -29,16 +29,16 @@
     background-color: #fff;
     display: block;
     min-height: 120px;
-    .font(42px, #ccc, center);
-    .flex;
+    @include font(42px, #ccc, center);
+    @include flex;
     .selected-pro-list{
-      .flex();
+      @include flex();
       flex-wrap: wrap;
       .selected-pro-item{
         width: 340px;
         margin: 10px;
         line-height: 50px;
-        .font(32px, @text-align:center);
+        @include font(32px, $text-align:center);
       }
     }
   }
@@ -48,7 +48,7 @@
       position: relative;
       input[type='file']{
         position: absolute;
-        .wh(100%, 100%);
+        @include wh(100%, 100%);
         background-color: red;
         top: 0;
         right: 0;
@@ -62,10 +62,10 @@
 
   .submit-btn{
     width: 90%;
-    background-color: @base-color;
+    background-color: $base-color;
     margin: 50px auto 0;
     border-radius: 10px;
     line-height: 100px;
-    .font(40px, #fff, center);
+    @include font(40px, #fff, center);
   }
 }
