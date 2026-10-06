@@ -3,7 +3,7 @@
  */
 let baseURL; 
 let imgUrl = '//elm.cangdu.org/img/';
-if(process.env.NODE_ENV === 'development'){
+if(import.meta.env.DEV){
   baseURL = '//api.cangdu.org';
 }else{
   baseURL = '//api.cangdu.org';
