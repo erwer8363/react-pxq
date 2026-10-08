@@ -17,7 +17,7 @@ export default class Server {
       timeout: 30000,
       params: null,
       data: null,
-      headers: null,
+      headers: undefined,
       withCredentials: true, // 是否携带 cookies 发起请求
       validateStatus: status => status >= 200 && status < 300,
       ...params,
