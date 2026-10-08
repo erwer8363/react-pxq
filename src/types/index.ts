@@ -13,11 +13,11 @@ export interface SelectableProduct extends Product {
 }
 
 /** 首页表单数据 */
-export interface FormData {
+export interface OrderForm {
   orderSum: string;
   name: string;
   phoneNo: string;
-  imgpath: string;
+  imgPath: string;
 }
 
 /** 记录中的商品 */
