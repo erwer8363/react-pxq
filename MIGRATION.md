@@ -41,7 +41,7 @@
 
 | 顺序 | 页面 | 学到的 Jotai 概念 |
 |---|---|---|
-| 3a | `TouchableOpacity`、`header`、`alert`、`helpcenter`、`balance` | 无，先热身 hooks 与 Props 类型 |
+| 3a（`balance` ✅） | `TouchableOpacity`、`header`、`alert`、`helpcenter`、`balance` | 无，先热身 hooks 与 Props 类型 |
 | 3b ✅ | `production` | 基础 `atom` / `useAtom`；异步 atom（取代 `getProData` thunk）；列表项更新（`atomFamily` / `focusAtom` 可选） |
 | 3c ✅ | `home` | 写入型 atom（取代 action creator）；派生 atom（`selectedProListAtom` 取代 `initData`）；一个 atom 写多个 atom（提交后清空表单与选择） |
 | 3d | `record`、`recordList` | `flagBarPos` 由路由派生；`atomWithStorage` 等扩展（可选） |
