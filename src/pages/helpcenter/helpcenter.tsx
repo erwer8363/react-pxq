@@ -8,18 +8,15 @@ export default function HelpCenter() {
         <PublicHeader title="帮助中心" record />
         <article className="context-con">
           <h2>介绍</h2>
-          <p>本项目主要用于理解 react 和 redux 的编译方式，以及 react + redux 之间的配合方式</p>
+          <p>本项目最初用于理解 react 和 redux 的编译方式，现已改造为 hooks + TypeScript + jotai 的实现</p>
           <h2>技术要点</h2>
-          <p>react：v16.2</p>
-          <p>redux：v3.7</p>
-          <p>webpack：v3.8</p>
+          <p>react：v18</p>
+          <p>jotai：v3</p>
           <p>react-router：v7</p>
-          <p>ES 6/7/8</p>
-          <p>code split</p>
-          <p>hot loader</p>
-          <p>axios：v0.17</p>
-          <p>less：v2.7</p>
-          <p>immutable：v3.8</p>
+          <p>TypeScript：v6</p>
+          <p>vite：v7</p>
+          <p>axios：v1</p>
+          <p>sass</p>
           <p>项目地址 <a href="https://github.com/bailicangdu/react-pxq">github</a></p>
         </article>
       </main>

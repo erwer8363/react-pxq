@@ -7,13 +7,12 @@ import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
 import { padStr } from '@/utils/format';
 import './home.scss';
 import {useAtomValue, useSetAtom} from "jotai";
-import {clearSelectedAtom, dataListAtom, selectedProListAtom} from "@/atoms/production";
+import {clearSelectedAtom, selectedProListAtom} from "@/atoms/production";
 import {clearFormDataAtom, formDataAtom, saveFormDataAtom, saveImagePathAtom} from "@/atoms/home";
 import {Link} from "react-router";
 
 const Home: FC = () => {
 
-  const dataList = useAtomValue(dataListAtom)
   const clearData = useSetAtom(clearFormDataAtom)
   // 已选择的商品数据
   const selectedProList = useAtomValue(selectedProListAtom)
@@ -53,11 +52,11 @@ const Home: FC = () => {
    */
   const uploadImg = async (event:React.ChangeEvent<HTMLInputElement>) => {
     try{
-      let body = new FormData();
+      const body = new FormData();
       const file = event.target.files?.[0]
       if(!file)return
       body.append('file', file);
-      let result = await API.uploadImg({data: body});
+      const result = await API.uploadImg({data: body});
       saveImgPath(envconfig.imgUrl + result.image_path);
     }catch(err){
       console.error(err);
@@ -67,7 +66,7 @@ const Home: FC = () => {
   // 提交表单
   const submitForm = () => {
     const {orderSum, name, phoneNo} = formData;
-    let tip = '';
+    let tip: string;
     if(!orderSum.length){
       tip = '请填写金额';
     }else if(!name.length){
@@ -85,8 +84,8 @@ const Home: FC = () => {
   
   // 关闭弹款
   const closeAlert = () => {
+    // 不清空 alertTip：保留文字，让淡出动画期间内容还在
     setAlertStatus(false)
-    setAlertTip('')
   }
 
   return (

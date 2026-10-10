@@ -1,48 +1,65 @@
+# react-pxq
 
-## 技术栈：
-  react + redux + webpack + react-router + ES6/7/8 + immutable
+A mobile sales-entry demo (forked from [bailicangdu/react-pxq](https://github.com/bailicangdu/react-pxq), MIT).
+The original was React 16 + Redux + webpack 3; this fork is being migrated to a modern stack
+as a learning project. See [MIGRATION.md](./MIGRATION.md) for the plan and progress.
 
+## Stack
 
-## 运行项目（nodejs 6.0+）
+- React 18 (function components + hooks)
+- TypeScript (strict)
+- jotai for state
+- react-router v7 (hash router)
+- SCSS, px → rem at build time (750px design, `remUnit` 75)
+- Vite, Vitest, ESLint (typescript-eslint + react-hooks)
+- axios, ahooks, react-transition-group
+
+## Getting started
+
+Requires Node.js 20.19+.
+
+```bash
+npm install
+npm run dev        # dev server
+npm run build      # production build -> dist/
+npm run preview    # preview the production build
 ```
- git clone https://github.com/bailicangdu/react-pxq.git
 
- cd react-pxq
+Open the dev server in Chrome's device mode: `TouchableOpacity` only listens to touch events.
 
- npm i  或者运行  yarn(推荐)
-  
- npm start
+## Scripts
 
- npm run build （发布）
+| Script | What it does |
+|---|---|
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Build to `dist/` |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run lint` | ESLint |
+| `npm test` | Vitest (atom unit tests) |
+
+## Project layout
+
+```
+src/
+├── api/          # axios wrapper and API calls
+├── atoms/        # jotai atoms (+ __tests__)
+├── components/   # shared components (header, alert, TouchableOpacity)
+├── pages/        # route pages (home, production, record, balance, helpcenter)
+├── router/       # route table
+├── style/        # global styles and SCSS mixins
+├── types/        # shared TypeScript types
+└── utils/        # rem setup, formatting helpers
 ```
 
+## Notes
 
-## 说明
+- The backend is the original author's public demo API (`api.cangdu.org`); it may go away.
+- Demo of the original project: https://cangdu.org/pxq/
 
->  本项目主要用于理解 react 和 redux 的编译方式，以及 react + redux 之间的配合方式
+---
 
->  如果觉得不错的话，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
-
->  或者您可以 "follow" 一下，我会不断开源更多的有趣的项目
-
->  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
-
->  开发环境 macOS 10.13.1  Chrome 63  nodejs 8.9.1
-
->  推荐一个 vue2 + vuex 构建的 45 个页面的大型开源项目。[地址在这里](https://github.com/bailicangdu/vue2-elm)
-
->  另外一个 vue2 + vuex 的简单项目，非常适合入门练习。[地址在这里](https://github.com/bailicangdu/vue2-happyfri)
-
-
-## 演示
-
-[查看演示效果](https://cangdu.org/pxq/)（请用chrome的手机模式预览）
-
-### 移动端扫描下方二维码
-
-<img src="https://github.com/bailicangdu/pxq/blob/master/screenshot/demo1.png" width="200" height="200"/>
-
-
+> The sections below are the original author's notes (in Chinese) about the legacy React + Redux version.
+> They are kept for reference and no longer describe this codebase.
 
 # 个人感悟
 

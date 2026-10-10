@@ -1,28 +1,17 @@
 import API from '@/api/api';
 import './recordList.scss';
-import {useEffect, useState} from "react";
+import {useRequest} from "ahooks";
 import {SaleRecord} from "@/types";
 import {useParams} from "react-router";
 
 const RecordList = () =>{
-  const [recordData, setRecordData] = useState<SaleRecord[]>([])
   const {type = ''} = useParams()
-  /**
-   * 初始化获取数据
-   * @param  {string} type 数据类型
-   */
-  const getRecord = async (type: string) => {
-    try{
-      const result = await API.getRecord({type});
-      setRecordData(result.data || [])
-    }catch(err){
-      console.error(err);
-    }
-  }
-
-  useEffect(()=>{
-    getRecord(type)
-  },[type])
+  // type 变化时自动重新请求，并忽略过期请求的返回
+  const {data} = useRequest(() => API.getRecord({type}), {
+    refreshDeps: [type],
+    onError: err => console.error(err),
+  })
+  const recordData: SaleRecord[] = data?.data ?? []
 
   return (
       <div>
