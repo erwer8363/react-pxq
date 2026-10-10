@@ -7,8 +7,8 @@ import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
 import { padStr } from '@/utils/format';
 import './home.scss';
 import {useAtomValue, useSetAtom} from "jotai";
-import {clearSelectedAtom, dataListAtom, selectedProListAtom} from "@/store/production";
-import {clearFormDataAtom, formDataAtom, saveFormDataAtom, saveImagePathAtom} from "@/store/home";
+import {clearSelectedAtom, dataListAtom, selectedProListAtom} from "@/atoms/production";
+import {clearFormDataAtom, formDataAtom, saveFormDataAtom, saveImagePathAtom} from "@/atoms/home";
 import {Link} from "react-router";
 
 const Home: FC = () => {
