@@ -25,8 +25,6 @@ npm run build      # production build -> dist/
 npm run preview    # preview the production build
 ```
 
-Open the dev server in Chrome's device mode: `TouchableOpacity` only listens to touch events.
-
 ## Scripts
 
 | Script | What it does |
