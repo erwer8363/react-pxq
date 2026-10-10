@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import PublicHeader from '@/components/header/header';
 import './production.scss';
 import {useAtomValue, useSetAtom} from "jotai";
@@ -12,10 +12,10 @@ const Production = () => {
 
     useEffect(()=>{
         if(!dataList.length) fetchProData()
-    },[fetchProData])
+    },[dataList.length, fetchProData])
 
   /**
-   * 添加或删减商品，交由redux进行数据处理，作为全局变量
+   * 添加或删减商品，交由jotai进行数据处理，作为全局变量
    * @param  {int} index 编辑的商品索引
    * @param  {int} num   添加||删减的商品数量
    */

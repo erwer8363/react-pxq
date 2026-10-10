@@ -16,7 +16,7 @@ const BrokeRage = () => {
   // 初始化数据
   useAsyncEffect(async () => {
     try{
-      let result = await api.getBalance();
+      const result = await api.getBalance();
       setBalance(result);
     }catch(err){
       console.error(err);
@@ -66,8 +66,8 @@ const BrokeRage = () => {
   关闭弹框
    */
   const closeAlert = () => {
+    // 不清空 alertTip：保留文字，让淡出动画期间内容还在
     setAlertStatus(false);
-    setAlertTip('');
   }
 
   return (
