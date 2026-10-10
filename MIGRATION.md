@@ -35,27 +35,33 @@
 - [x] 去掉 `@mixin` 装饰器和 babel decorators 插件，`padStr` 改普通函数
 - [ ] ~~加本地 mock~~ 暂缓：2026-10 实测 `api.cangdu.org` 的 products / balance / record 接口仍可访问，暂不需要；接口失效时再用 msw 补上
 
-## 阶段 3：按页面纵切，hooks + Jotai
+## 阶段 3：按页面纵切，hooks + Jotai ✅
 
 每做完一个页面，删掉对应的 redux slice。
 
 | 顺序 | 页面 | 学到的 Jotai 概念 |
 |---|---|---|
-| 3a（`balance` ✅） | `TouchableOpacity`、`header`、`alert`、`helpcenter`、`balance` | 无，先热身 hooks 与 Props 类型 |
+| 3a ✅ | `TouchableOpacity`、`header`、`alert`、`helpcenter`、`balance` | 无，先热身 hooks 与 Props 类型 |
 | 3b ✅ | `production` | 基础 `atom` / `useAtom`；异步 atom（取代 `getProData` thunk）；列表项更新（`atomFamily` / `focusAtom` 可选） |
 | 3c ✅ | `home` | 写入型 atom（取代 action creator）；派生 atom（`selectedProListAtom` 取代 `initData`）；一个 atom 写多个 atom（提交后清空表单与选择） |
-| 3d | `record`、`recordList` | `flagBarPos` 由路由派生；`atomWithStorage` 等扩展（可选） |
+| 3d ✅ | `record`、`recordList` | `flagBarPos` 由路由派生；`atomWithStorage` 等扩展（可选） |
 
-## 阶段 4：路由与动画
+## 阶段 4：路由与动画 ✅
 
-- [ ] `react-router-dom` 4 → 6（`Switch`→`Routes`，`Redirect`→`Navigate`，去掉 `match.path`）
-- [ ] `asyncComponent` 改 `React.lazy` + `Suspense`
-- [ ] `react-addons-css-transition-group` 换 `react-transition-group` 或纯 CSS 过渡
-- [ ] 评估移除 `fastclick`（真机确认点击无延迟后再删）
+- [x] 路由升级到 react-router v7（`createHashRouter`，`Navigate`，相对路径）
+- [x] 删除 `asyncComponent`（项目很小，页面改为直接导入，暂不分包）
+- [x] 动画换成 `react-transition-group`（`CSSTransition` + `nodeRef`）
+- [x] 移除 `fastclick`（`TouchableOpacity` 仍只监听触摸事件，桌面浏览器点不了，可后续改成 `onClick` + `:active`）
 
-## 阶段 5：收尾
+## 阶段 5：收尾 ✅
 
-- [ ] 卸载 `redux`、`react-redux`、`redux-thunk`、`immutable`、`prop-types`、`fastclick`
-- [ ] ESLint（`typescript-eslint` + `react-hooks` 规则）
-- [ ] 用 `createStore()` 给 atom 写单测（不渲染组件）
-- [ ] 更新 README
+- [x] 卸载 `redux`、`react-redux`、`redux-thunk`、`immutable`、`prop-types`、`fastclick`
+- [x] ESLint（`typescript-eslint` + `react-hooks` 规则），`npm run lint`
+- [x] 用 `createStore()` 给 atom 写单测（Vitest，不渲染组件），`npm test`
+- [x] 更新 README
+- [x] 去掉 `.npmrc` 的 `legacy-peer-deps`，现在可以直接 `npm install`
+
+## 备注
+
+- TypeScript 暂时固定在 6.0.x：`typescript-eslint` 的 peer 范围是 `<6.1.0`，还不支持 TS 7。等它支持后再升级。
+- 接口（`api.cangdu.org`）仍可访问，所以没有做本地 mock；失效时再用 msw 补。
