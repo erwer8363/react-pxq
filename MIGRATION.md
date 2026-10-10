@@ -51,7 +51,7 @@
 - [x] 路由升级到 react-router v7（`createHashRouter`，`Navigate`，相对路径）
 - [x] 删除 `asyncComponent`（项目很小，页面改为直接导入，暂不分包）
 - [x] 动画换成 `react-transition-group`（`CSSTransition` + `nodeRef`）
-- [x] 移除 `fastclick`（`TouchableOpacity` 仍只监听触摸事件，桌面浏览器点不了，可后续改成 `onClick` + `:active`）
+- [x] 移除 `fastclick`；`TouchableOpacity` 改为 `onClick` + Pointer Events，桌面和手机都能点
 
 ## 阶段 5：收尾 ✅
 
