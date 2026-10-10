@@ -1,7 +1,7 @@
 import { FC, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import './header.scss';
+import {NavLink} from "react-router";
 
 interface IHeaderProps {
   title: string;
@@ -24,16 +24,16 @@ const PublicHeader: FC<IHeaderProps> = ({title,record,confirm}) => {
         <span className="header-slide-icon icon-catalog" onClick={toggleNav}></span>
         <span className="header-title">{title}</span>
         {
-            record&&<NavLink to="/record" exact className="header-link icon-jilu"></NavLink>
+            record&&<NavLink to="/record" className="header-link icon-jilu"></NavLink>
         }
         {
-            confirm&&<NavLink to="/" exact className="header-link header-link-confim">确定</NavLink>
+            confirm&&<NavLink to="/" className="header-link header-link-confim">确定</NavLink>
         }
         <CSSTransition in={navState} timeout={300} classNames="nav" nodeRef={navRef} unmountOnExit>
           <aside ref={navRef} className="nav-slide-list" onClick={toggleNav}>
-            <NavLink to="/" exact className="nav-link icon-jiantou-copy-copy">首页</NavLink>
-            <NavLink to="/balance" exact className="nav-link icon-jiantou-copy-copy">提现</NavLink>
-            <NavLink to="/helpcenter" exact className="nav-link icon-jiantou-copy-copy">帮助中心</NavLink>
+            <NavLink to="/" className="nav-link icon-jiantou-copy-copy">首页</NavLink>
+            <NavLink to="/balance" className="nav-link icon-jiantou-copy-copy">提现</NavLink>
+            <NavLink to="/helpcenter" className="nav-link icon-jiantou-copy-copy">帮助中心</NavLink>
           </aside>
         </CSSTransition>
       </header>

@@ -9,7 +9,7 @@ import './home.scss';
 import {useAtomValue, useSetAtom} from "jotai";
 import {clearSelectedAtom, dataListAtom, selectedProListAtom} from "@/store/production";
 import {clearFormDataAtom, formDataAtom, saveFormDataAtom, saveImagePathAtom} from "@/store/home";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 
 const Home: FC = () => {
 
