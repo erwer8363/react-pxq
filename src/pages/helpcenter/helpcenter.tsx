@@ -1,16 +1,9 @@
-import React, { Component } from 'react';
-import PublicHeader from '@/components/header/header'; 
-import { is, fromJS } from 'immutable';
+import PublicHeader from '@/components/header/header';
 import './helpcenter.scss';
 
-export default class HelpCenter extends Component {
+export default function HelpCenter() {
 
-  shouldComponentUpdate(nextProps, nextState){
-    return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState))
-  }
-
-  render(){
-    return (
+  return (
       <main>
         <PublicHeader title="帮助中心" record />
         <article className="context-con">
@@ -20,7 +13,7 @@ export default class HelpCenter extends Component {
           <p>react：v16.2</p>
           <p>redux：v3.7</p>
           <p>webpack：v3.8</p>
-          <p>react-router：v4.2</p>
+          <p>react-router：v7</p>
           <p>ES 6/7/8</p>
           <p>code split</p>
           <p>hot loader</p>
@@ -30,6 +23,5 @@ export default class HelpCenter extends Component {
           <p>项目地址 <a href="https://github.com/bailicangdu/react-pxq">github</a></p>
         </article>
       </main>
-    )
-  }
+  )
 }

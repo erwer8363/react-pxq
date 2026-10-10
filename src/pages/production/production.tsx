@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import PublicHeader from '@/components/header/header';
 import './production.scss';
 import {useAtomValue, useSetAtom} from "jotai";
-import {dataListAtom, editSelectProAtom, getProDataListAtom, togSelectProAtom} from "@/store/production";
+import {dataListAtom, editSelectProAtom, getProDataListAtom, togSelectProAtom} from "@/atoms/production";
 
 const Production = () => {
     const dataList = useAtomValue(dataListAtom)

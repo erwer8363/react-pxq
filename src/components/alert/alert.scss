@@ -32,10 +32,10 @@
   opacity: 1;
 }
 
-.alert-leave{
+.alert-exit{
   opacity: 1;
 }
-.alert-leave.alert-leave-active{
+.alert-exit.alert-exit-active{
   transition: all 300ms;
   opacity: 0;
 }
